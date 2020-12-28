@@ -34,4 +34,10 @@ class MainModel extends ChangeNotifier {
       'createdAt': Timestamp.now(),
     });
   }
+
+  void reload() {
+    notifyListeners();
+  }
+
+  Future deleteCheckedItems() async {}
 }

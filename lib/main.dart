@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ToDo App',
+      title: 'TODOアプリ',
       home: MainPage(),
     );
   }
@@ -27,7 +27,7 @@ class MainPage extends StatelessWidget {
       create: (_) => MainModel()..getTodoListRealtime(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('ToDo App'),
+          title: Text('TODOアプリ'),
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
           final todoList = model.todoList;
@@ -47,6 +47,7 @@ class MainPage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => AddPage(),
+                fullscreenDialog: true,
               ),
             );
           },

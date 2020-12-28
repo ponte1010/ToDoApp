@@ -28,8 +28,14 @@ class AddPage extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                RaisedButton(child: Text('追加する'), onPressed: () {}),
-                // TODO: Firestoreに値を追加する
+                RaisedButton(
+                  child: Text('追加する'),
+                  onPressed: () async {
+                    // Firestoreに値を追加する
+                    await model.add();
+                    Navigator.pop(context);
+                  },
+                ),
               ],
             ),
           );

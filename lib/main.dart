@@ -30,14 +30,18 @@ class MainPage extends StatelessWidget {
           title: Text('TODOアプリ'),
           actions: [
             Consumer<MainModel>(builder: (context, model, child) {
+              final isActive = model.checkShouldActiveCompleteButton();
               return FlatButton(
-                onPressed: () async {
-                  await model.deleteCheckedItems();
-                },
+                onPressed: isActive
+                    ? () async {
+                        await model.deleteCheckedItems();
+                      }
+                    : null,
                 child: Text(
                   '完了',
                   style: TextStyle(
-                    color: Colors.white,
+                    color:
+                        isActive ? Colors.white : Colors.white.withOpacity(0.5),
                   ),
                 ),
               );

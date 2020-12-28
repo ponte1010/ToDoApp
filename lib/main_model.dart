@@ -49,7 +49,6 @@ class MainModel extends ChangeNotifier {
     references.forEach((reference) {
       batch.delete(reference);
     });
-
     return batch.commit();
   }
 

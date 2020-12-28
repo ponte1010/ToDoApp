@@ -10,7 +10,7 @@ class AddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<MainModel>.value(
-      value: MainModel(),
+      value: model,
       child: Scaffold(
         appBar: AppBar(
           title: Text('新規追加'),
@@ -23,7 +23,7 @@ class AddPage extends StatelessWidget {
                 TextField(
                   decoration: InputDecoration(
                     labelText: "追加するTODO",
-                    hintText: "例）ゴミを出す",
+                    hintText: "ゴミを出す",
                   ),
                   onChanged: (text) {
                     model.newTodoText = text;
